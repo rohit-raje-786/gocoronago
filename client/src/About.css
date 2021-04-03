@@ -1,0 +1,40 @@
+body{
+    font-family: cursive;
+    color: black;
+}
+
+.thumbnail
+{
+    background: grey;
+    padding: 10px;
+    border-radius: 10px;
+}
+img{
+    border-radius:50%;
+    height: 100px;
+}
+.fouders
+{
+    
+    border-bottom:2px solid white;
+}
+.profile
+{
+    border-bottom:1px solid white;
+}
+
+.container-main
+{
+    
+    margin-top:100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: grey;
+    max-width: 500px;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 50px;
+    
+}
