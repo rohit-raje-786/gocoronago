@@ -1,23 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- <%- include('../partials/head'); %> -->
+    <%- include('../partials/head'); %>
 </head>
 <body class="container">
 
 <header>
-    <!-- <%- include('../partials/header'); %> -->
+    <%- include('../partials/header'); %>
 </header>
 
 <main>
     <div class="jumbotron">
-        <h1>This is great</h1>
-        <p>Welcome to templating using EJS</p>
+        <h1>User profile</h1>
+        <form>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputEmail4">FirstName</label>
+                <input type="email" class="form-control" id="inputEmail4" disabled value='<%= details.first_name %>'>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputPassword4">LastName</label>
+                <input type="text" class="form-control" id="inputPassword4" disabled value='<%= details.last_name %>'>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputAddress">Email</label>
+              <input type="text" class="form-control" id="inputAddress" disabled value='<%= details.email %>'>
+            </div>
+            <div class="form-group">
+              <label for="inputAddress2">UserName</label>
+              <input type="text" class="form-control" id="inputAddress2" disabled value='<%= details.username %>'>
+            </div>
+            <div class="form-group">
+                <label for="inputAddress">Address 1</label>
+                <input type="text" class="form-control" id="inputAddress" disabled value='<%= details.addr1 %>'>
+            </div>
+            <div class="form-group">
+                <label for="inputAddress">Address 2</label>
+                <input type="text" class="form-control" id="inputAddress" disabled value='<%= details.addr2 %>'>
+              </div>
+            <div class="form-row">
+              <div class="form-group col-md-4">
+                <label for="inputCity">City</label>
+                <input type="text" class="form-control" id="inputCity" disabled value='<%= details.city %>'>
+              </div>
+              <div class="form-group col-md-2">
+                <label for="inputCity">Zip</label>
+                <input type="text" class="form-control" id="inputCity" disabled value='<%= details.zip %>'>
+              </div>
+              <div class="form-group col-md-4">
+                <label for="inputCity">Phone No</label>
+                <input type="text" class="form-control" id="inputCity" disabled value='<%= details.phoneno %>'>
+              </div>
+              <div class="form-group col-md-2">
+                <label for="inputZip">AdharCard No</label>
+                <input type="text" class="form-control" id="inputZip" disabled value='<%= details.adhno %>'>
+              </div>
+            </div>
+           
+            <button type="submit" class="btn btn-primary">Edit</button>
+          </form>
+        
     </div>
 </main>
 
 <footer>
-    <!-- <%- include('../partials/footer'); %> -->
+    <%- include('../partials/footer'); %>
 </footer>
 
 </body>

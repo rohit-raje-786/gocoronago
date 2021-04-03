@@ -6,7 +6,7 @@ import Login from './Login'
 import About from './About'
 import HospitalAdministrative from './hospitalAdministrative'
 import AdministrativeSignUp from './administrativeSignUp'
-import Userprofile from './userProfile'
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -25,8 +25,7 @@ function App() {
           <Route exact path='/signin' component={Login}/>
           <Route exact path='/about' component={About}/>
           <Route exact path='/hospitalAdministrative' component={HospitalAdministrative}/>
-          <Route exact path='/administrativeSignUp' component={AdministrativeSignUp}/>
-          <Route exact path='/userProfile' component={Userprofile}/>
+          <Route exact path='/administrativeSignUp' component={AdministrativeSignUp}/>          
 
        </Switch>
      </Router>

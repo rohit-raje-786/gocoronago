@@ -6,9 +6,12 @@ const Register=require('./registerSchema');
 const Contact=require('./contactSchema');
 const bodyparser=require('body-parser');
 const cors=require('cors');
+const path=require('path');
 
 const app=express();
+
 app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname,'./views/pages'));
 
 
 
@@ -22,6 +25,7 @@ const port=5000;
 
 
 app.use(express.json());
+
 // app.use(express.static(path.join(__dirname, '../public')));
 
 mongoose.connect("mongodb://localhost/NewDb1",{
@@ -31,9 +35,20 @@ mongoose.connect("mongodb://localhost/NewDb1",{
 }).then(()=>console.log('suceesfully connected to the database'))
 .catch(e=>console.log(e.message));
 
-// app.get('/userProfile',(req,res)=>{
-//   res.render('pages/userProfile')
-// })
+app.get('/userProfile',async(req,res)=>{
+  try{
+   const details=await Register.findOne({username:req.body.username})
+    res.render('userProfile',{details:results})
+  }
+  catch(e)
+  {
+    console.log(e.message)
+  }
+})
+
+app.get('/vaccination',(req,res)=>{
+  res.render('vaccination')
+})
 
 app.post('/register',async(req,res)=>{
     try
@@ -108,8 +123,7 @@ app.post('/register',async(req,res)=>{
 })
 app.post('/signin',async(req,res)=>{
  try{
-    console.log(req.body.username)
-    console.log(req.body.password)
+
     const result=await Register.findOne({username:req.body.username})
     if(result==null)
     {
@@ -118,15 +132,18 @@ app.post('/signin',async(req,res)=>{
         message:'Error:Invalid Credentials'
       })
     }
-    
     else
     {
+      try{
       
-      res.redirect(307, 'userProfile');
-      // return res.send({
-      //   success:true,
-      //   message:'Succesfully SignIn'
-      // })
+        res.render('userProfile',{details:result})
+
+      }
+      catch(e)
+      {
+        console.log(e.message)
+      }
+    
     }
  }catch(e)
  {
