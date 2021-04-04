@@ -40,10 +40,10 @@ export default class About extends Component {
                                 <img src={img2} alt="img1"/>
                             </div>
                             
-                            <p><strong className="fouders">Mark-ZuckerBerg</strong></p>
+                            <p><strong className="fouders">Rohit Patil</strong></p>
                             <p className="profile">Founder & CEO</p>
                             <p>
-                            Mark Zuckerberg, in full Mark Elliot Zuckerberg, (born May 14, 1984, White Plains, New York, U.S.), American computer programmer who was cofounder and CEO (2004– ) of Facebook, a social networking Web site.
+                            Rohit Patil, in full Rohit Vilas Patil, (born May 14, 1984, White Plains, New York, U.S.), American computer programmer who was cofounder and CEO (2004– ) of Facebook, a social networking Web site.He is Passionate Web-Developer.
                             </p>
                         </div>
                         </div>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head'); %>
+</head>
+<body class="container">
+
+<header>
+    <%- include('../partials/header1'); %>
+</header>
+
+<main>
+    <div class="jumbotron">
+        <h1>Hospital Administrative profile</h1>
+        <form>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputEmail4">Hospital Name</label>
+                <input type="email" class="form-control" id="inputEmail4" disabled value='<%= details.first_name %>'>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputPassword4">Administrative Name</label>
+                <input type="text" class="form-control" id="inputPassword4" disabled value='<%= details.last_name %>'>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputAddress">Admiminstrative Email</label>
+              <input type="text" class="form-control" id="inputAddress" disabled value='<%= details.email %>'>
+            </div>
+            <div class="form-group">
+              <label for="inputAddress2">Administrative UserName</label>
+              <input type="text" class="form-control" id="inputAddress2" disabled value='<%= details.username %>'>
+            </div>
+            <div class="form-group">
+                <label for="inputAddress">Hospital Address 1</label>
+                <input type="text" class="form-control" id="inputAddress" disabled value='<%= details.addr1 %>'>
+            </div>
+            <div class="form-group">
+                <label for="inputAddress">Hospital Address 2</label>
+                <input type="text" class="form-control" id="inputAddress" disabled value='<%= details.addr2 %>'>
+              </div>
+            <div class="form-row">
+              <div class="form-group col-md-4">
+                <label for="inputCity">City in which hospital is located</label>
+                <input type="text" class="form-control" id="inputCity" disabled value='<%= details.city %>'>
+              </div>
+              <div class="form-group col-md-2">
+                <label for="inputCity">Zip</label>
+                <input type="text" class="form-control" id="inputCity" disabled value='<%= details.zip %>'>
+              </div>
+              <div class="form-group col-md-4">
+                <label for="inputCity">Hospital Phone No</label>
+                <input type="text" class="form-control" id="inputCity" disabled value='<%= details.phoneno %>'>
+              </div>
+              <div class="form-group col-md-2">
+                <label for="inputZip">Administrative AdharCard No</label>
+                <input type="text" class="form-control" id="inputZip" disabled value='<%= details.adhno %>'>
+              </div>
+            </div>
+           
+            <button type="submit" class="btn btn-primary">Edit</button>
+          </form>
+        
+    </div>
+</main>
+
+
+
+</body>
+</html>

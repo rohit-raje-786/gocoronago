@@ -37,6 +37,7 @@ export default class Login extends Component {
         return (
             <div>
                 <Navbar/>
+                <h1 className="text-center text-dark bg-white">Covid-19 Vaccine Registeration Portal</h1>
                 <div className="login-form">
                     <form action="/signin" method="post">
                         <h2 className="text-center">Citizen Sign in</h2>       

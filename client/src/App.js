@@ -6,7 +6,11 @@ import Login from './Login'
 import About from './About'
 import HospitalAdministrative from './hospitalAdministrative'
 import AdministrativeSignUp from './administrativeSignUp'
-
+import Vaccination from './vaccination'
+import Saifee from './saifeeHp'
+import ApolloHp from './apolloHp'
+import SaintgHp from './saintgHp'
+import HospitalDetail from './hospitalDetail'
 import {
   BrowserRouter as Router,
   Switch,
@@ -26,7 +30,11 @@ function App() {
           <Route exact path='/about' component={About}/>
           <Route exact path='/hospitalAdministrative' component={HospitalAdministrative}/>
           <Route exact path='/administrativeSignUp' component={AdministrativeSignUp}/>          
-
+          <Route exact path='/vaccination' component={Vaccination}/>          
+          <Route exact path='/saifeeHp' component={Saifee}/>          
+          <Route exact path='/apolloHp' component={ApolloHp}/>          
+          <Route exact path='/saintgHp' component={SaintgHp}/>          
+          <Route exact path='/hospitalDetail' component={HospitalDetail}/>          
        </Switch>
      </Router>
    </div>

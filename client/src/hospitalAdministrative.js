@@ -38,7 +38,7 @@ export default class hospitalAdministrative extends Component {
             <div>
                 <Navbar/>
                 <div className="login-form">
-                    <form action="" method="post">
+                    <form action="/administrativeLoginIn" method="post">
                         <h2 className="text-center">Hospital Administrative Sign in</h2>       
                         <div className="form-group">
                             <input type="text" className="form-control" placeholder="Administrative Username" name="username" onChange={this.onChange} value={this.state.username} required="required"/>

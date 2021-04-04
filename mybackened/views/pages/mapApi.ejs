@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places"></script>
+    <title>Go Corona Go</title>
+       <%- include('../partials/head'); %>
+</head>
+<style>
+    html, body, #map-canvas {
+        height: 500px;
+        width: 800px;
+        margin: auto;
+        padding: 0px
+      }
+</style>
+<body>
+   
+<h1 class="text-center">Hospitals NearBy You</h1>
+<div id="map-canvas"></div>
+<hr class="mt-5"></hr>
+<div class="container">
+    <div class="card-deck">
+        <div class="card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/62/Mumbai_03-2016_21_Saifee_Hospital.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Saifee Hospital</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          </div>
+          <div class="card-footer">
+           <a href="saifeeHp">Take Vaccine Over Here &rarr;</a>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://img.etimg.com/thumb/width-640,height-480,imgsize-18798,resizemode-1,msid-48309893/industry/healthcare/biotech/healthcare/apollo-hospitals-group-to-set-up-hospital-in-navi-mumbai.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Apollo Hospital</h5>
+            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+          </div>
+          <div class="card-footer">
+            <a href="apolloHp">Take Vaccine Over Here &rarr;</a>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2kzWAaPTLmEw0CESRGZ_pFrFlaJ_Uu9m6yw&usqp=CAU" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Saint Georges Hospital</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+          </div>
+          <div class="card-footer">
+            <a href="saintgHp">Take Vaccine Over Here &rarr;</a>
+          </div>
+        </div>
+      </div>
+</div>
+<br/>
+
+
+<script>
+    var map;
+var infowindow;
+
+function initialize() {
+  var pyrmont = new google.maps.LatLng(20.463400, 74.999901); // sample location to start with: Mumbai, India
+
+  map = new google.maps.Map(document.getElementById('map-canvas'), {
+    center: pyrmont,
+    zoom: 15
+  });
+
+  var request = {
+    location: pyrmont,
+    radius: 200,
+    types: ['hospital', 'health'] // this is where you set the map to get the hospitals and health related places
+  };
+  infowindow = new google.maps.InfoWindow();
+  var service = new google.maps.places.PlacesService(map);
+  service.nearbySearch(request, callback);
+}
+
+function callback(results, status) {
+  if (status == google.maps.places.PlacesServiceStatus.OK) {
+    for (var i = 0; i < results.length; i++) {
+      createMarker(results[i]);
+    }
+  }
+}
+
+function createMarker(place) {
+  var placeLoc = place.geometry.location;
+  var marker = new google.maps.Marker({
+    map: map,
+    position: place.geometry.location
+  });
+
+  google.maps.event.addListener(marker, 'click', function() {
+    infowindow.setContent(place.name);
+    infowindow.open(map, this);
+  });
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+</body>
+</html>
+

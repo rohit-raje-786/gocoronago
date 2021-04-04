@@ -42,7 +42,7 @@ export default class administrativeSignUp extends Component {
         console.log(confirm_password)
         if(password===confirm_password)
         {
-            fetch('/register',{
+            fetch('/adminSignUp',{
                 method:"POST",
                 headers:{
                     'Content-Type':'application/json'
@@ -95,7 +95,7 @@ export default class administrativeSignUp extends Component {
                  
                 <div className="container">
                         <div className="signup-form">
-                    <form action="" method="POST">
+                    <form action="/adminSignUp" method="post">
                         <h2>Hospital Registeration</h2>
                         <p className="hint-text">Create your account. It's free and only takes a minute.</p>
                         <div className="form-group">

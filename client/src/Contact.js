@@ -39,14 +39,14 @@ export default class Contact extends Component {
             <div>
                 
                 <Navbar/>
-                <div className="container ">
+                <div className="container mt-5">
                 <div className="row">
                 <div className="col">
                     <div className="card">
                         <div className="card-header bg-primary text-white"><i className="fa fa-envelope"></i> Contact us.
                         </div>
                         <div className="card-body">
-                            <form>
+                            <form >
                                 <div className="form-group">
                                     <label for="name">Name</label>
                                     <input type="text" className="form-control" id="name" aria-describedby="emailHelp" placeholder="Enter name" name="name" onChange={this.onChange} value={this.state.name} required/>

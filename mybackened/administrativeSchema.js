@@ -1,7 +1,7 @@
 const mongoose=require('mongoose');
 
 
-const registerSchema=new mongoose.Schema({
+const administrativeSchema=new mongoose.Schema({
     first_name:{
         type:String,
         required:true
@@ -52,6 +52,6 @@ const registerSchema=new mongoose.Schema({
 
 
 
-const Register=mongoose.model("Register",registerSchema);
+const Administrative=mongoose.model("Administrative",administrativeSchema);
 
-module.exports=Register;
+module.exports=Administrative;
